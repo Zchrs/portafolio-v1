@@ -1,0 +1,75 @@
+.layout {
+    max-height: 100vh;
+    height: 100%;
+    width: 100%;
+    // justify-content: center;
+    // align-items: center;
+
+
+    //--------------------------- header -----------------------------
+    &__header {
+        width: 100%;
+        position: sticky;
+        top: 0;
+        display: block;
+        z-index: 100;
+        // background: yellowgreen;
+        height: fit-content;
+    }
+
+    //-------------------------- nav ----------------------
+    &__nav {
+        display: block;
+        position: relative;
+        width: 100px;
+        min-height: 100vh;
+        height: 100%;
+        background: gray;
+
+        @media (max-width: 900px) {
+            display: none;
+        }
+    }
+
+    //---------------------- fin nav ----------------------
+    //----------------------- fin header -----------------------------
+
+    //--------------------------- body -----------------------------
+
+    &__container {
+        // border: yellow 1px solid;
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        justify-content: center;
+        align-items: center;
+
+
+        @media (max-width: 900px) {
+
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__contain {
+        // border: black 1px solid;
+        display: flex;
+
+
+
+        @media (max-width: 900px) {
+            padding: 10px 10px;
+            // border: 1px solid;
+            width: fit-content;
+
+        }
+    }
+
+    //----------------------- fin body -----------------------------
+
+    &__footer {
+        background: goldenrod;
+        width: 100%;
+        height: 200px;
+    }
+}

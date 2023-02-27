@@ -1,11 +1,7 @@
-import { HomeScreen } from "./views/home/HomeScreen"
-import {AppRouter} from './assets/router/AppRouter';
-
+import { Layout } from "./routes";
 
 function App() {
-  return (
-   <AppRouter />
-  )
+  return <Layout />;
 }
 
-export default App
+export default App;
