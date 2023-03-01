@@ -22,10 +22,14 @@ export const HomeScreen = () => {
               <img src={Images.linLogo} alt="" />
             </i>
             <i>
-              <img src={Images.fbLogoGray} alt="" />
+              <img src={Images.fbLogo} alt="" />
             </i>
-            <i>IG</i>
-            <i>TW</i>
+            <i>
+              <img src={Images.igLogo} alt="" />
+            </i>
+            <i>
+              <img src={Images.twFullLogo} alt="" />
+            </i>
           </div>
           <div className="home__btns">
             <button className="btn-home">

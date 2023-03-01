@@ -1,10 +1,22 @@
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_59_904)">
-<path d="M5.74446 21H1.39071V6.9795H5.74446V21ZM3.56496 5.067C2.17296 5.067 1.04346 3.9135 1.04346 2.5215C1.04346 1.85276 1.30911 1.2114 1.78199 0.73853C2.25486 0.265657 2.89621 0 3.56496 0C4.2337 0 4.87505 0.265657 5.34793 0.73853C5.8208 1.2114 6.08646 1.85276 6.08646 2.5215C6.08646 3.9135 4.95696 5.067 3.56496 5.067ZM22.039 21H17.695V14.175C17.695 12.5482 17.662 10.4625 15.4315 10.4625C13.168 10.4625 12.8207 12.2295 12.8207 14.058V21H8.47146V6.9795H12.6467V8.892H12.7075C13.2887 7.79025 14.7085 6.62775 16.8265 6.62775C21.2327 6.62775 22.0427 9.5295 22.0427 13.2983V21H22.039Z" fill="#34B0BE"/>
-</g>
-<defs>
-<clipPath id="clip0_59_904">
-<rect width="24" height="24" fill="white"/>
-</clipPath>
-</defs>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="0.68622in" height="0.684626in" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 5.62 5.61"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil0 {fill:#34B0BE;fill-rule:nonzero}
+   ]]>
+  </style>
+ </defs>
+ <g id="Capa_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_2574035279632">
+   <path class="fil0" d="M0.68 0c0.37,0 0.68,0.3 0.68,0.68 0,0.37 -0.3,0.68 -0.68,0.68 -0.37,0 -0.68,-0.3 -0.68,-0.68 0,-0.37 0.3,-0.68 0.68,-0.68zm-0.58 1.86l1.17 0 0 3.75 -1.17 0 0 -3.75z"/>
+   <path class="fil0" d="M1.99 1.86l1.12 0 0 0.51 0.02 0c0.16,-0.29 0.54,-0.61 1.1,-0.61 1.18,0 1.4,0.78 1.4,1.78l0 2.05 -1.16 0 0 -1.82c0,-0.43 -0.01,-0.99 -0.61,-0.99 -0.61,0 -0.7,0.47 -0.7,0.96l0 1.85 -1.16 0 0 -3.75z"/>
+  </g>
+ </g>
 </svg>
