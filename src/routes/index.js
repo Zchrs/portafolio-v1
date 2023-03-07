@@ -6,4 +6,6 @@ export * from "../views/skills/SkillsScreen";
 export * from "../views/contact/ContactScreen";
 export * from "../components/Header";
 export * from "../components/Footer";
+export * from "../components/Lateral";
+export * from "../components/CardInfo";
 export * from "../layouts/Layout";

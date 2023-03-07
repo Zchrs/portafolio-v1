@@ -9,6 +9,7 @@ import fbLogoGray from "./facebook_logo.svg";
 import fbLogo from "./fb-logo.svg";
 import gDevLogo from "./logoPersonal.png";
 import corpoDeLogo from "./logo-corpodeco.png";
+import whatsappLogo from "./whatsapp-logo.svg";
 
 // icons
 import arrowLeft from "./arrow-left1.svg";
@@ -25,8 +26,8 @@ import menu2 from "./menu2.svg";
 // images
 import mia from "./mia.png";
 
-
 export const Images = {
+  whatsappLogo,
   gDevLogo,
   appImgfun,
   igFillFull,
@@ -47,5 +48,5 @@ export const Images = {
   menu,
   menu2,
   mia,
-  fbLogo
+  fbLogo,
 };

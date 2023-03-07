@@ -77,7 +77,12 @@ export const Header = () => {
           <ul>
             <li>
               <Link to={"/"}>
-                <button>+57 302-849-2871</button>{" "}
+                <button>
+                  <i>
+                    <img src={Images.whatsappLogo} alt="" />
+                  </i>
+                  +57 302-849-2871
+                </button>
               </Link>
             </li>
             {/* <li>

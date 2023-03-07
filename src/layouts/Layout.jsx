@@ -3,6 +3,7 @@ import {
   // componente global
   Header,
   Footer,
+  Lateral,
   HomeScreen,
   ServicesScreen,
   // fin componente global
@@ -42,7 +43,9 @@ export const Layout = () => {
           <Header />
         </header>
         <section className="layout__container">
-          <nav className="layout__nav"></nav>
+          <nav className="layout__nav">
+            <Lateral />
+          </nav>
           <div className="layout__contain">
             <AppRouter />
           </div>
