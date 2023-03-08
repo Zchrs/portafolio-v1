@@ -6,10 +6,7 @@ const techsCard = [
   {
     title: "html",
     img: "html5-logo",
-    text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
-        corporis, quas similique, quasi ipsum commodi reiciendis sunt facere
-        veniam, quia laborum? Voluptas ducimus nemo laborum neque fugiat
-        veritatis expedita at?`,
+    text: `Experience since 2019`,
   },
   {
     title: "Css3",
@@ -55,8 +52,11 @@ const techsCard = [
 
 const CardInfo = ({ text }) => {
   return (
-    <div className="info">
-      <p>{text}</p>
+    <div key={techsCard.title} className="info">
+      <div className="info__content">
+        <div className="info__shape"></div>
+        <p>{text}</p>
+      </div>
     </div>
   );
 };

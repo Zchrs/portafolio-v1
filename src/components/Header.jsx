@@ -8,7 +8,7 @@ let contadorMenu = 0;
 
 function showHideMenu() {
   let subMenu = document.getElementById("submenu");
-  if (contadorMenu == 0 && window.innerWidth <= 900) {
+  if (contadorMenu == 0 && window.innerWidth <= 950) {
     subMenu.style.cssText = `height: 100vh;`;
     contadorMenu = 1;
   } else {
@@ -25,7 +25,7 @@ export const Header = () => {
     let headers = document.getElementById("cabeza");
     let nav = document.querySelector(".nav");
 
-    if (window.innerWidth > 900) {
+    if (window.innerWidth > 950) {
       if (window.scrollY > 0) {
         headers.style.cssText = `box-shadow: #acd63967 1px 2px 5px;
           backdrop-filter: blur(20px);

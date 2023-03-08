@@ -7,7 +7,6 @@
     min-height: 100vh;
     height: 100%;
 
-    @media (max-width: 900px) {}
 
     &__container {
         display: flex;
@@ -15,9 +14,10 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        gap: 150px;
+        gap: 50px;
         // border: #ff4f6f 1px solid;
 
+        
 
         @media (max-width: 900px) {
             flex-direction: column;

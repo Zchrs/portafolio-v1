@@ -9,7 +9,7 @@ export const Lateral = ({ text }) => {
         {techsCard.map((tech) => (
           <div key={tech.title} className="technologies__card">
             <img src={getImageUrl(tech.img)} alt="" />
-            <CardInfo text={techsCard.text} />
+            <CardInfo text={tech.text} />
           </div>
         ))}
       </div>
