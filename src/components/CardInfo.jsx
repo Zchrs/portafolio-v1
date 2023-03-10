@@ -4,57 +4,56 @@ const getImageUrl = (name) => {
 
 const techsCard = [
   {
-    title: "html",
+    title0: "html",
     img: "html5-logo",
-    text: `Experience since 2019`,
+    title: `Experience since 2019`,
+    text: "Read more...",
+    icon: "experience",
   },
   {
-    title: "Css3",
+    title0: "Css3",
     img: "css3-logo",
-    text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
-        corporis, quas similique, quasi ipsum commodi reiciendis sunt facere
-        veniam, quia laborum? Voluptas ducimus nemo laborum neque fugiat
-        veritatis expedita at?`,
+    title: `Experience since 2019`,
+    text: "Read more...",
+    icon: "experience",
   },
   {
-    title: "JS",
+    title0: "JS",
     img: "javascript-logo",
-    text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
-        corporis, quas similique, quasi ipsum commodi reiciendis sunt facere
-        veniam, quia laborum? Voluptas ducimus nemo laborum neque fugiat
-        veritatis expedita at?`,
+    title: `Experience since 2019`,
+    text: "Read more...",
+    icon: "experience",
   },
   {
-    title: "React",
+    title0: "React",
     img: "react",
-    text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
-        corporis, quas similique, quasi ipsum commodi reiciendis sunt facere
-        veniam, quia laborum? Voluptas ducimus nemo laborum neque fugiat
-        veritatis expedita at?`,
+    title: `Experience since 2019`,
+    text: "Read more...",
+    icon: "experience",
   },
   {
-    title: "VueJS",
+    title0: "VueJS",
     img: "vuejs-logo",
-    text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
-        corporis, quas similique, quasi ipsum commodi reiciendis sunt facere
-        veniam, quia laborum? Voluptas ducimus nemo laborum neque fugiat
-        veritatis expedita at?`,
+    title: `Experience since 2019`,
+    text: "Read more...",
+    icon: "experience",
   },
   {
-    title: "sass",
+    title0: "sass",
     img: "sass-logo",
-    text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
-        corporis, quas similique, quasi ipsum commodi reiciendis sunt facere
-        veniam, quia laborum? Voluptas ducimus nemo laborum neque fugiat
-        veritatis expedita at?`,
+    title: `Experience since 2019`,
+    text: "Read more...",
+    icon: "experience",
   },
 ];
 
-const CardInfo = ({ text }) => {
+const CardInfo = ({ title, text, icon }) => {
   return (
     <div key={techsCard.title} className="info">
       <div className="info__content">
         <div className="info__shape"></div>
+        <h3>{title}</h3>
+        <img src={icon} alt="" />
         <p>{text}</p>
       </div>
     </div>
