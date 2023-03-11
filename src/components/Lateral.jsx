@@ -1,13 +1,14 @@
+import { CardInfo, techsCard } from "./CardInfo";
+import { getImageUrl } from "./globalFunctions";
 import "../css/technologies.scss";
-import { CardInfo, techsCard, getImageUrl } from "./CardInfo";
 
-export const Lateral = ({ text, icon }) => {
+export const Lateral = ({ text, icon, title }) => {
   return (
     <div className="technologies">
       <h2> My stack</h2>
       <div className="technologies__container">
         {techsCard.map((tech) => (
-          <div key={tech.title} className="technologies__card">
+          <div key={tech.title0} className="technologies__card">
             <img src={getImageUrl(tech.img)} alt="" />
             <CardInfo
               title={tech.title}

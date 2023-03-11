@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 import { Images } from "../assets/img/index";
-import { Backend } from "../contentBack/Backend";
+import { Backend, routes } from "../contentBack/Backend";
 
 import "../css/header.scss";
 
@@ -108,21 +108,11 @@ export const Header = () => {
         </div>
         <div className="nav">
           <ul id="submenu">
-            <li>
-              <Link to={"/"}>Home</Link>
-            </li>
-            <li>
-              <Link to={"/about"}>About Me</Link>
-            </li>
-            <li>
-              <Link to={"/services"}>Services</Link>
-            </li>
-            <li>
-              <Link to={"/portfolio"}>Portfolio</Link>
-            </li>
-            <li>
-              <Link to={"/contact"}>Contact</Link>
-            </li>
+            {routes.map(({ id, name }) => (
+              <li key={id}>
+                <Link to={id}>{name}</Link>
+              </li>
+            ))}
           </ul>
         </div>
       </nav>

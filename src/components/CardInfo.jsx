@@ -1,7 +1,3 @@
-const getImageUrl = (name) => {
-  return new URL(`/src/assets/img/${name}.svg`, import.meta.url).href;
-};
-
 const techsCard = [
   {
     title0: "html",
@@ -60,4 +56,4 @@ const CardInfo = ({ title, text, icon }) => {
   );
 };
 
-export { techsCard, CardInfo, getImageUrl };
+export { techsCard, CardInfo };

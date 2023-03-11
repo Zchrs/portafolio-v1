@@ -1,5 +1,7 @@
-import { Backend } from "../../contentBack/Backend";
+import { Link } from "react-router-dom";
+import { Backend, images } from "../../contentBack/Backend";
 import { Images } from "../../assets/img";
+import { getImageUrl } from "../../components/globalFunctions";
 import "../../css/globals.scss";
 
 export const HomeScreen = () => {
@@ -18,18 +20,13 @@ export const HomeScreen = () => {
           </div>
 
           <div className="home__social">
-            <i>
-              <img src={Images.linLogo} alt="" />
-            </i>
-            <i>
-              <img src={Images.fbLogo} alt="" />
-            </i>
-            <i>
-              <img src={Images.igLogo} alt="" />
-            </i>
-            <i>
-              <img src={Images.twFullLogo} alt="" />
-            </i>
+            {images.map(({ title, url, img }) => (
+              <div key={title} className="home__li">
+                <Link to={url} target="_new">
+                  <img src={getImageUrl(img)} alt="" />
+                </Link>
+              </div>
+            ))}
           </div>
           <div className="home__btns">
             <button className="btn-home">

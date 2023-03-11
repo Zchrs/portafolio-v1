@@ -1,7 +1,7 @@
 // logos
 import appImgfun from "./app.png";
-import igFillFull from "./instagram-full.svg";
-import igLogo from "./instagram_logo.svg";
+import igFillFull from "./instagram-logo.svg";
+import igLogo from "./instagram-logo.svg";
 import twFullLogo from "./tw-full-logo.svg";
 import linLogo from "./cib_linkedin-in.svg";
 import linLogo1 from "./linkedin-logo.svg";
