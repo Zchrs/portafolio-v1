@@ -1,12 +1,15 @@
 .header {
     position: sticky;
-    width: 100%;
+    width: 85%;
+    margin: auto;
     display: flex;
     flex-direction: column;
     top: -70px;
     height: fit-content;
-    background: black;
+    backdrop-filter: blur(5px);
+    background: rgba(127, 115, 115, 0.163);
     z-index: 100;
+    border-radius: 0px 0px 15px 15px;
 
 
     @media (max-width:950px) {
@@ -21,9 +24,10 @@
     &__sub-header {
         display: flex;
         justify-content: space-between;
-        border-bottom: 1px solid rgb(37, 36, 36);
+        border-bottom: 1px solid rgb(64, 51, 51);
         height: fit-content;
-        padding: 5px 100px;
+        padding: 5px 10px;
+        
 
         @media (max-width:950px) {
             padding: 0;
@@ -37,7 +41,7 @@
             width: 50px;
             height: 100%;
             position: absolute;
-            margin: 5px 0;
+
 
             img {
                 width: 100%;
@@ -76,6 +80,8 @@
                 cursor: pointer;
                 color: white;
                 border: none;
+                font-size: 10px;
+                font-weight: 100;
             }
 
             // border: gold 1px solid;
@@ -101,7 +107,6 @@
 
             }
 
-
             a {
                 color: rgb(194, 13, 13);
                 padding: 5px 10px;
@@ -118,7 +123,6 @@
                     font-size: 16px;
                     margin: 0;
                 }
-
             }
         }
 
@@ -130,7 +134,7 @@
     nav {
         margin-top: 5px;
         transition: all ease .3s;
-        padding: 0 100px;
+        padding: 0px;
         display: flex;
         width: 100%;
         height: 50px;
@@ -205,11 +209,24 @@
                     color: rgb(251, 240, 240);
                     padding: 5px 12px;
                     // border: rgb(53, 7, 7) 1px solid;
+                    font-weight: 200;
                     text-decoration: none;
                     width: 100%;
                     height: 100%;
                     display: block;
-                    font-size: 16px;
+                    font-size: 15px;
+                    transition: all ease .3s;
+
+                    &:hover {
+                        color: white;
+                        text-shadow:
+                            black 1px 1px 1px,
+                            black -1px -1px 1px,
+                            white 1px 1px 10px,
+                            white -1px -1px 10px,
+                            #ff4f6f 1px 1px 15px,
+                            #ff4f6f -1px -1px 15px;
+                    }
 
                     @media (max-width: 950px) {
                         text-align: center;

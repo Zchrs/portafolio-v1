@@ -1,5 +1,6 @@
 import { CardInfo, techsCard } from "./CardInfo";
-import { getImageUrl } from "./globalFunctions";
+import { Link } from "react-router-dom";
+import { getFile } from "./globalFunctions";
 import "../css/technologies.scss";
 
 export const Lateral = ({ text, icon, title }) => {
@@ -7,17 +8,18 @@ export const Lateral = ({ text, icon, title }) => {
     <div className="technologies">
       <h2> My stack</h2>
       <div className="technologies__container">
-        {techsCard.map((tech) => (
-          <div key={tech.title0} className="technologies__card">
-            <img src={getImageUrl(tech.img)} alt="" />
+        {techsCard.map(({img, icon, title, title0, text, }) => (
+          <div key={title0} className="technologies__card">
+            <img src={getFile('img', `${img}`, 'svg')} alt="" />
             <CardInfo
-              title={tech.title}
-              text={tech.text}
-              icon={getImageUrl(tech.icon)}
+              title={title}
+              text={text}
+              icon={icon}
             />
           </div>
         ))}
       </div>
+      <Link to={'skills'} className="technologies__link">More</Link>
     </div>
   );
 };

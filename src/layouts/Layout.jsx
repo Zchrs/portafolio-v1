@@ -31,7 +31,6 @@ export const Layout = () => {
         transition: all ease .5s;
       `;
         contador = 0;
-        console.log("0px");
       }
     }
   });

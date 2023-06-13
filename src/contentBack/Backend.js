@@ -52,6 +52,11 @@ export const routes = [
     id: "portfolio",
     name: "Portfolio",
   },
+  
+  {
+    id: "skills",
+    name: "Skills",
+  },
   {
     id: "contact",
     name: "Contact",

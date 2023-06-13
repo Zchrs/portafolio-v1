@@ -1,15 +1,14 @@
 import { Link } from "react-router-dom";
 import { Backend, images } from "../../contentBack/Backend";
-import { Images } from "../../assets/img";
-import { getImageUrl } from "../../components/globalFunctions";
+import { getFile, getImageUrl } from "../../components/globalFunctions";
 import "../../css/globals.scss";
 
 export const HomeScreen = () => {
   return (
-    <section className="home">
+    <section className="home animations">
       <article className="home__container">
         <div className="home__image">
-          <img src={Images.mia} alt="" />
+        <img src={getFile('img', `mia`, 'png')} alt="" />
         </div>
         <div className="home__contain">
           <div>
@@ -29,9 +28,11 @@ export const HomeScreen = () => {
             ))}
           </div>
           <div className="home__btns">
-            <button className="btn-home">
-              {Backend.textButtonsHome.contactMeBtn}
-            </button>
+            <Link to={"/contact"}>
+              <button className="btn-home">
+                {Backend.textButtonsHome.contactMeBtn}
+              </button>
+            </Link>
           </div>
         </div>
       </article>

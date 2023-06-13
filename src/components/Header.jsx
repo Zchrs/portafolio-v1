@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
-import { Images } from "../assets/img/index";
 import { Backend, routes } from "../contentBack/Backend";
+import { getFile } from "./globalFunctions";
 
 import "../css/header.scss";
 
@@ -27,32 +27,33 @@ export const Header = () => {
 
     if (window.innerWidth > 950) {
       if (window.scrollY > 0) {
-        headers.style.cssText = `box-shadow: #acd63967 1px 2px 5px;
-          backdrop-filter: blur(20px);
-          background: #3b3d3493;
-          transition: ease .8s;
-          
+        headers.style.cssText = `
+        box-shadow: #ff4f6f62 1px 2px 5px;
+        transition: ease .8s;
           `;
-        nav.style.cssText = `transform: translateX(60px);`;
+        nav.style.cssText = `transform: translateX(50px);`;
         logo.style.cssText = `
-        transform: translateY(64px) 
+        transform: translateY(65px) 
         rotateY(360deg); width: 40px; 
         height: 100%;
+        z-index: 100;
         `;
         demoAccountBtn.style.cssText = `
         transform: translateY(60px); 
         transition: all ease .2s; 
         transition-delay: .2s;
+        z-index: 100;
+
         `;
         openAccountBtn.style.cssText = `
         transform: translateY(60px); 
         transition: all ease .2s; 
         transition-delay: .1s; 
+        z-index: 100;
+
         `;
       } else {
-        headers.style.cssText = `box-shadow: #acd63967 0px 0px 0px;
-          backdrop-filter: blur(0px);
-          background: black;
+        headers.style.cssText = `
           transition: ease .8s;
           display: flex;
           justify-content: space-between;
@@ -60,7 +61,7 @@ export const Header = () => {
         demoAccountBtn.style.cssText = `transform: translateY(0px); transition: all ease .3s; transition-delay: .2s;`;
         openAccountBtn.style.cssText = `transform: translateY(0px); transition: all ease .3s; transition-delay: .1s;`;
         nav.style.cssText = `margin-left: 0px`;
-        logo.style.cssText = `transform: translateY(-5px); width: 50px; height: 100%;`;
+        logo.style.cssText = `transform: translateY(0px); width: 50px; height: 100%;`;
       }
     }
   });
@@ -70,7 +71,7 @@ export const Header = () => {
       <div className="header__sub-header">
         <Link to={"/"}>
           <div id="logo" className="logo">
-            <img src={Images.gDevLogo} alt="" />
+            <img src={getFile('img', `logoPersonal`, 'png')} alt="" />
           </div>
         </Link>
         <div className="header__sub-nav">
@@ -79,7 +80,7 @@ export const Header = () => {
               <Link to={"/"}>
                 <button>
                   <i>
-                    <img src={Images.whatsappLogo} alt="" />
+                  <img src={getFile('img', `whatsapp-logo`, 'svg')} alt="" />
                   </i>
                   +57 302-849-2871
                 </button>
@@ -104,7 +105,7 @@ export const Header = () => {
       {/* <hr /> */}
       <nav>
         <div onClick={showHideMenu} id="logo" className="logo2">
-          <img src={Images.gDevLogo} alt="" />
+        <img src={getFile('img', `logoPersonal`, 'png')} alt="" />
         </div>
         <div className="nav">
           <ul id="submenu">
