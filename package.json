@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "portafolio-v1",
+    "build": "vite build",
     "preview": "vite preview",
     "deploy": "gh-pages -d build",
-    "name": "gustavodev",
+    "name": "portafolio-v1",
   "homepage": "https://zchrs.github.io/portafolio-v1/", 
   "version": "0.1.0"
   },
