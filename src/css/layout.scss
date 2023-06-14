@@ -1,10 +1,7 @@
 .layout {
     display: grid;
-    max-height: 100vh;
+    min-height: 100vh;
     height: 100%;
-    width: 100%;
-    // justify-content: center;
-    // align-items: center;
 
 
     //--------------------------- header -----------------------------
@@ -22,7 +19,6 @@
     &__nav {
         display: block;
         position: relative;
-        width: 100px;
         min-height: 100vh;
         height: 100%;
         z-index: 100;
@@ -44,21 +40,19 @@
 
         @media (max-width: 1024px) {
             grid-template-columns: 1fr;
-            place-items: center;
         }
     }
 
     &__contain {
         display: grid;
-        width: 100%;
-        min-width: 100vh;
         margin: auto;
 
 
 
         @media (max-width: 1024px) {
-            padding: 10px 10px;
+            padding: 10px;
             // border: 1px solid;
+            
 
         }
     }
