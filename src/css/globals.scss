@@ -732,12 +732,17 @@ html, body {
 
 .contact {
     display: grid;
+    min-width: 100vh;
     width: 100%;
     height: fit-content;
-    // border: #00d4ff 1px solid;
+    border: #00d4ff 1px solid;
     color: white;
     padding: 50px 24px 24px 0;
     gap: 24px;
+
+    @media (max-width: 900px) {
+        min-width: fit-content;
+    }
 
     &__h1{
         font-weight: 100;
