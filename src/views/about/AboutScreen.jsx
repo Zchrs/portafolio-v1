@@ -1,4 +1,5 @@
-
+import cvEnglish from '../../../public/cv-mia-english.pdf';
+import cvSpanish from '../../../public/cv-mia-spanish.pdf';
 import { getFile } from "../../components/globalFunctions";
 export const AboutScreen = () => {
   return (
@@ -31,10 +32,10 @@ export const AboutScreen = () => {
           </div>
         </div>
         <div className="about-btns">
-          <a href="" download>
+          <a href={cvEnglish} download>
             <button>Download CV english</button>
           </a>
-          <a href="" download>
+          <a href={cvSpanish} download>
             <button>Download CV spanish</button>
           </a>
         </div>
