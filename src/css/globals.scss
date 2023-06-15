@@ -91,11 +91,13 @@ html, body {
             font-size: 38px;
             color: #34b0be;
             font-weight: 300;
-
+            // border: #34b0be 1px solid;
+            width: 117%;
 
             @media (max-width: 900px) {
                 font-size: 30px;
                 text-align: center;
+                width: 100%;
             }
         }
 
