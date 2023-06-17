@@ -880,20 +880,20 @@ html, body {
             height: 30px;
             border: none;
             border-radius: 5px;
-            background: rgba(0, 128, 0, 0.571);
+            background: #34b0be6e;
             color: white;
             cursor: pointer;
             transition: all ease .3s;
         }
         .button-container button:hover{
-            background: green;
+            background: #34B0BE;
         }
         .button-container button:last-child{
-            background: #ff4f6fcf;
+            background: #ff4f6f87;
             
         }
         .button-container button:hover:last-child{
-            background: #ff0505;
+            background: #ff4f6f;
             
         }
         .button-container{

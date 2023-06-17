@@ -39,7 +39,6 @@
             // border: white 1px solid;
             transition: all ease .3s;
             width: 50px;
-            height: 100%;
             position: absolute;
 
 
@@ -117,6 +116,7 @@
                 display: block;
                 font-size: 18px;
                 font-weight: 200;
+                z-index: 999;
 
                 @media (max-width: 1024px) {
                     text-align: center;
@@ -217,6 +217,7 @@
                     display: block;
                     font-size: 15px;
                     transition: all ease .3s;
+                    z-index: 999;
 
                     &:hover {
                         color: white;

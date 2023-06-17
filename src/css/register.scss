@@ -2,16 +2,52 @@
     display: flex;
     position: relative;
 
+    @media (max-width: 1024px) {
+        display: grid;
+    }
+
+    &-titles{
+        display: grid;
+        gap: 5px;
+    }
+    
+    &-logo{
+        display: grid;
+        margin: auto;
+        width: 150px;
+        img{
+            width: 100%;
+            filter: drop-shadow(1px 1px 1px white);
+        }
+    }
+
     &-left{
         position: relative;
-        
-            padding: 24px;
+        padding: 24px;
         display: grid;
         background: #ff4f6fa0;
         clip-path: polygon(0 0, 100% 0, 70% 100%, 0% 100%);
-        align-items: center;
         width: 50%;
         height: 100%;
+    
+        h3{
+            font-weight: 400;
+            font-size: 12px;
+        }
+        p{
+            font-size: 12px;
+        }
+        a{
+            font-size: 11px;
+            &:hover{
+                text-shadow: black 1px 1px 1px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            width: 100%;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
+        }
 
         h2{
             font-size: 30px;
@@ -21,7 +57,7 @@
     &-right{
         place-items: center;
         position: absolute;
-        padding: 25px 50px 0px 0px;
+        padding: 25px 50px 0px 50px;
         display: grid;
         background: rgba(255, 255, 255, 0.438);
         right: 0;
@@ -29,12 +65,24 @@
         height: 600px;
         clip-path: polygon(26% 0, 100% 0, 100% 100%, 0% 100%);
 
+        @media (max-width: 1024px) {
+            padding: 10px 10px 10px 10px;
+            position: relative;
+            width: 100%;
+            clip-path: polygon(0% 0, 100% 5%, 100% 100%, 0% 100%);
+        }
+
         a{
             display: grid;
             width: 100%;
             text-align: center;
             font-size: 12px;
             padding-top: 5px;
+            font-weight: 500;
+
+            &:hover{
+                text-shadow: black 1px 1px 1px;
+            }
         }
 
         .group{
@@ -239,21 +287,22 @@
             height: 30px;
             border: none;
             border-radius: 5px;
-            background: rgba(0, 128, 0, 0.571);
+            background: #34b0beca;
             color: white;
             cursor: pointer;
             transition: all ease .3s;
         }
         .button-container button:hover{
-            background: green;
+            background: #34b0be;
+            text-shadow: black 1px 1px 1px;
         }
         .button-container button:last-child{
-            background: #ff4f6fcf;
+            background: #ff4f6f95
             
         }
         .button-container button:hover:last-child{
-            background: #ff0505;
-            
+            background: #ff4f6f;
+            text-shadow: black 1px 1px 1px;
         }
         .button-container{
             display: flex;
@@ -269,6 +318,15 @@
             width: 130%;
             display: grid;
             font-weight: 200;
+   
+            @media (max-width: 1024px) {
+                left: -40px;
+            }
+   
+            @media (max-width: 400px) {
+               width: 100%;
+               left: 0;
+            }
         }
         select{
             height: 40px;
@@ -292,7 +350,7 @@
             height: 120px;
             border-radius: 6px;
             padding: 12px;
-            margin: auto;
+
         }
     }
 }

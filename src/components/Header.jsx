@@ -18,6 +18,7 @@ function showHideMenu() {
 }
 export const Header = () => {
   window.addEventListener("scroll", function () {
+    let phoneNumber = document.getElementById("phone-number");
     let openAccountBtn = document.getElementById("open-account-btn");
     let demoAccountBtn = document.getElementById("demo-account-btn");
 
@@ -33,24 +34,34 @@ export const Header = () => {
           `;
         nav.style.cssText = `transform: translateX(50px);`;
         logo.style.cssText = `
-        transform: translateY(65px) 
-        rotateY(360deg); width: 40px; 
+        transition: all ease .2s; 
+        transform: translateY(65px);
+        position: absolute; 
+        rotateY(360deg); 
+        width: 40px;
+        height: 40px; 
+        z-index: 9999;
         height: 100%;
-        z-index: 100;
         `;
         demoAccountBtn.style.cssText = `
+        right: 10px;
+        position: absolute;
         transform: translateY(60px); 
         transition: all ease .2s; 
         transition-delay: .2s;
-        z-index: 100;
-
+        z-index: 9999;
         `;
         openAccountBtn.style.cssText = `
+        right: 100px;
+        position: absolute;
         transform: translateY(60px); 
         transition: all ease .2s; 
         transition-delay: .1s; 
-        z-index: 100;
+        z-index: 9999;
 
+        `;
+        phoneNumber.style.cssText = `
+        opacity: 0;
         `;
       } else {
         headers.style.cssText = `
@@ -58,10 +69,25 @@ export const Header = () => {
           display: flex;
           justify-content: space-between;
           `;
-        demoAccountBtn.style.cssText = `transform: translateY(0px); transition: all ease .3s; transition-delay: .2s;`;
-        openAccountBtn.style.cssText = `transform: translateY(0px); transition: all ease .3s; transition-delay: .1s;`;
+        demoAccountBtn.style.cssText = `
+        transform: translateY(0px); 
+        transition: 
+        all ease .3s; 
+        transition-delay: .2s;`;
+        openAccountBtn.style.cssText = `
+        transform: translateY(0px); 
+        transition: 
+        all ease .3s; 
+        transition-delay: .1s;`;
         nav.style.cssText = `margin-left: 0px`;
-        logo.style.cssText = `transform: translateY(0px); width: 50px; height: 100%;`;
+        logo.style.cssText = `
+        transform: translateY(0px); 
+        rotateY(360deg); 
+        width: 50px; 
+        height: 50px; 
+        position: relative;
+        `;
+        phoneNumber.style.cssText = `opacity: 1;`
       }
     }
   });
@@ -69,14 +95,14 @@ export const Header = () => {
   return (
     <header className="header" id="cabeza">
       <div className="header__sub-header">
-        <Link to={"/"}>
-          <div id="logo" className="logo">
+        <Link className="logo" to={"/"}>
+          <div id="logo">
             <img src={getFile('img', `logoPersonal`, 'png')} alt="" />
           </div>
         </Link>
         <div className="header__sub-nav">
           <ul>
-            <li>
+            <li id="phone-number">
               <Link to={"/"}>
                 <button>
                   <i>
@@ -94,7 +120,7 @@ export const Header = () => {
                 <button>{Backend.textButtonsHome.registerBtn}</button>
               </Link>
             </li>
-            <li id="demo-account-btn">
+            <li  id="demo-account-btn">
               <Link to={"auth/login"}>
                 <button>{Backend.textButtonsHome.loginBtn}</button>
               </Link>
