@@ -16,8 +16,8 @@ export const Footer = () => {
           </div>
         <div>
           <h3>Users</h3>
-          <Link>Register</Link>
-          <Link>Login</Link>
+          <Link to={'/auth/register'}>Register</Link>
+          <Link to={'/auth/login'}>Login</Link>
           </div>
         <div>
           <h3>Contact</h3>

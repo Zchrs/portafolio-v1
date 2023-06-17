@@ -1,4 +1,4 @@
-// import { AppRouter } from "../assets/router/AppRouter";
+
 import {
   // componente global
   Header,
@@ -6,12 +6,15 @@ import {
   Lateral,
   HomeScreen,
   ServicesScreen,
+  Login,
+  Register,
   // fin componente global
 } from "../routes/index";
-import { HashRouter as Router, Routes, Route, Outlet } from "react-router-dom";
-
+import { HashRouter as Router, Routes, Route, Outlet, HashRouter } from "react-router-dom";
+import { AppRouter } from "../router/AppRouter";
 import "../css/layout.scss";
-import { AppRouter } from "../assets/router/AppRouter";
+import AuthApp from "./AuthLayout";
+
 
 let contador = 0;
 
@@ -36,8 +39,7 @@ export const Layout = () => {
   });
 
   return (
-    <Router>
-      <div className="layout">
+        <div className="layout">
         <header id="headerLayout" className="layout__header">
           <Header />
         </header>
@@ -53,6 +55,5 @@ export const Layout = () => {
           <Footer />
         </footer>
       </div>
-    </Router>
   );
 };

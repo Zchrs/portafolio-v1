@@ -90,12 +90,12 @@ export const Header = () => {
               <Link to={"/"}>ES</Link>
             </li> */}
             <li id="open-account-btn">
-              <Link to={"/"}>
+              <Link to={"auth/register"}>
                 <button>{Backend.textButtonsHome.registerBtn}</button>
               </Link>
             </li>
             <li id="demo-account-btn">
-              <Link to={"/"}>
+              <Link to={"auth/login"}>
                 <button>{Backend.textButtonsHome.loginBtn}</button>
               </Link>
             </li>
@@ -110,7 +110,7 @@ export const Header = () => {
         <div className="nav">
           <ul id="submenu">
             {routes.map(({ id, name }) => (
-              <li key={id}>
+              <li onClick={showHideMenu} key={id}>
                 <Link to={id}>{name}</Link>
               </li>
             ))}
