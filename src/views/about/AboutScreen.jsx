@@ -1,6 +1,5 @@
 import cvEnglish from '../../../public/cv-mia-english.pdf';
 import cvSpanish from '../../../public/cv-mia-spanish.pdf';
-import { getFile } from "../../components/globalFunctions";
 export const AboutScreen = () => {
   return (
     <section className="about animations">

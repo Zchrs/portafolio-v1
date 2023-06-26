@@ -14,7 +14,7 @@ import {
   Register
 } from "../routes/index";
 
-export const AppRouter = () => {
+export const AppRouter = ({ history }) => {
   return (
     <Routes>
       <Route exact path="/*" element={<HomeScreen />} />

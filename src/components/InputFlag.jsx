@@ -1,24 +1,25 @@
-import React, { useState, useMemo } from 'react'
-import Select from 'react-select'
-import countryList from 'react-select-country-list'
+import React, { useState, useMemo } from 'react';
+import Select from 'react-select';
+import countryList from 'react-select-country-list';
 
+function InputFlag({ onChange }) {
+  const [label, setLabel] = useState('');
+  const options = useMemo(() => countryList().getData(label), []);
 
+  const changeHandler = (selectedOption) => {
+    setLabel(selectedOption);
+  
+    // Llama a la función 'onChange' pasando el valor seleccionado
+    onChange(selectedOption.label);
+  };
 
-
-
-function InputFlag() {
-  const [value, setValue] = useState('')
-  const options = useMemo(() => countryList().getData(), [])
-
-  const changeHandler = value => {
-    setValue(value)
-  }
-
-  return <Select 
-            options={options} 
-            value={value} 
-            onChange={changeHandler} 
-        />
+  return (
+    <Select 
+      options={options} 
+      value={label} 
+      onChange={changeHandler}
+    />
+  );
 }
 
-export default InputFlag
+export default InputFlag;

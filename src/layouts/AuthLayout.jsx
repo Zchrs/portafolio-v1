@@ -3,7 +3,7 @@
 import { AuthRouter } from "../router/AppRouter";
 import "../css/authlayout.scss";
 
-function AuthLayout() {
+export const AuthLayout = () => {
     return (
         <section className="auth">
             <div className="auth-container">
@@ -13,4 +13,3 @@ function AuthLayout() {
       );
 }
 
-export default AuthLayout;

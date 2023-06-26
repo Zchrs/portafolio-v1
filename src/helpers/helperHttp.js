@@ -1,7 +1,9 @@
+import axios from "axios";
+
 export const helpHttp = () => {
-  const customFetch = (endpoint, options) => {
-    const defaultHeader = {
-      accept: "application/json",
+  const customFetch = async (endpoint, options) => {
+    const defaultHeaders = {
+      Accept: "application/json",
     };
 
     const controller = new AbortController();
@@ -9,26 +11,43 @@ export const helpHttp = () => {
 
     options.method = options.method || "GET";
     options.headers = options.headers
-      ? { ...defaultHeader, ...options.headers }
-      : defaultHeader;
+      ? { ...defaultHeaders, ...options.headers }
+      : defaultHeaders;
 
-    options.body = JSON.stringify(options.body) || false;
-    if (!options.body) delete options.body;
+    options.data = options.body ? JSON.stringify(options.body) : undefined;
+    delete options.body;
 
-    //console.log(options);
+    // console.log(options);
     setTimeout(() => controller.abort(), 3000);
 
-    return fetch(endpoint, options)
-      .then((res) =>
-        res.ok
-          ? res.json()
-          : Promise.reject({
-              err: true,
-              status: res.status || "00",
-              statusText: res.statusText || "Ocurrió un error",
-            })
-      )
-      .catch((err) => err);
+    try {
+      const response = await axios(endpoint, options);
+      return response.data;
+    } catch (error) {
+      if (error.response) {
+        // La solicitud fue realizada y el servidor respondió con un código de estado fuera del rango 2xx
+        const { status, statusText } = error.response;
+        return Promise.reject({
+          err: true,
+          status: status || "00",
+          statusText: statusText || "Ocurrió un error",
+        });
+      } else if (error.request) {
+        // La solicitud fue realizada pero no se recibió respuesta
+        return Promise.reject({
+          err: true,
+          status: "00",
+          statusText: "No se recibió respuesta del servidor",
+        });
+      } else {
+        // Se produjo un error al configurar la solicitud
+        return Promise.reject({
+          err: true,
+          status: "00",
+          statusText: "Ocurrió un error al realizar la solicitud",
+        });
+      }
+    }
   };
 
   const get = (url, options = {}) => customFetch(url, options);

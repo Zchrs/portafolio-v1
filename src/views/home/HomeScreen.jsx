@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { Backend, images } from "../../contentBack/Backend";
-import { getFile, getImageUrl } from "../../components/globalFunctions";
 import "../../css/globals.scss";
 
 export const HomeScreen = () => {

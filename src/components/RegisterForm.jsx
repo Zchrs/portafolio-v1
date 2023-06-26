@@ -5,30 +5,37 @@ import Message from "./Message";
 import InputFlag from "./InputFlag";
 import { Link } from "react-router-dom";
 
-// import { useState } from "react";
+import { useState } from "react";
 
 const initialForm = {
   name: "",
   lastname: "",
   email: "",
+  country: "",
   phone: "",
+  password: "",
+  repassword: "",
   message: "",
 };
 const validationsForm = (form) => {
   let errors = {};
   let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
   let regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
+  let regexPass = /^@[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
   let regexMessage = /^.{1,300}$/;
   let regexPhone = /^\+[0-9]{1,3}\s?[0-9]{10}$/;
   const name = document.getElementById("name");
   const lastName = document.getElementById("lastname");
+  const country = document.getElementById("country");
   const email = document.getElementById("email");
   const phone = document.getElementById("phone");
   const message = document.getElementById("message");
+  const pass = document.getElementById("password");
+  const repass = document.getElementById("repassword");
 
   if (!form.name) {
     name.style.cssText = "border: red 1px solid;";
-    errors.name = "Field name are required";
+    errors.name = "Field name is required";
   } else if (!regexName.test(form.name.trim())) {
     errors.name = "Name field have must only letters";
   } else {
@@ -37,7 +44,7 @@ const validationsForm = (form) => {
 
   if (!form.lastname) {
     lastName.style.cssText = "border: red 1px solid";
-    errors.lastname = "Field last name are required";
+    errors.lastname = "Field last name is required";
   } else if (!regexName.test(form.lastname.trim())) {
     errors.lastname = "Last name field have must only letters";
   } else {
@@ -46,7 +53,7 @@ const validationsForm = (form) => {
 
   if (!form.email) {
     email.style.cssText = "border: red 1px solid";
-    errors.email = "Field email are required";
+    errors.email = "Field email is required";
   } else if (!regexEmail.test(form.email.trim())) {
     errors.email = "Email incorrect";
   } else {
@@ -58,8 +65,54 @@ const validationsForm = (form) => {
     errors.phone = "Field phone are required";
   } else if (!regexPhone.test(form.phone.trim())) {
     errors.phone = "Phone field have must only numbers";
-  } else {
+  } else if (phone.value.length <= '12') {
+    errors.phone = "Phone format incorrect";
+  }else {
     phone.style.cssText = "border: #34B0BE 1px solid;";
+  }
+
+
+  if (!form.country) {
+    // country.style.cssText = "border: red 1px solid";
+    errors.country = "Field country is required";
+  } else {
+    // country.style.cssText = "border: #34B0BE 1px solid;";
+  }
+
+
+  if (!form.pass ) {
+    pass.style.cssText = "border: red 1px solid";
+    
+  } else if (!regexPass.test(form.pass.trim())) {
+    errors.pass = "pass field have must letters and numbers";
+  } else {
+    pass.style.cssText = "border: #34B0BE 1px solid;";
+  }
+
+  if (!form.repass ) {
+    repass.style.cssText = "border: red 1px solid";
+    
+  } else if (!regexPass.test(form.pass.trim())) {
+    errors.repass = "pass field have must letters and numbers";
+  } else {
+    repass.style.cssText = "border: #34B0BE 1px solid;";
+  }
+
+  if (pass.value !== repass.value) {
+    repass.style.cssText = "border: red 1px solid";
+    pass.style.cssText = "border: red 1px solid";
+    errors.pass = "Passwords no matches"
+  }else if (pass.value === '' && repass.value === '') {
+    repass.style.cssText = "border: red 1px solid";
+    pass.style.cssText = "border: red 1px solid";
+    errors.pass = "Pass pass are required";
+    errors.repass = "Please confirm repass";
+  } else if (pass.value.length <= '6') {
+    errors.pass = "Password must contain 7 or more characters";
+  }
+  else {
+    pass.style.cssText = "border: #34B0BE 1px solid;";
+    repass.style.cssText = "border: #34B0BE 1px solid;";
   }
 
   if (!form.message) {
@@ -83,11 +136,16 @@ const RegisterForm = () => {
     handleChange,
     handleBlur,
     handleSubmit,
+    handleSubmits,
+    handleCountryChange
   } = useForm(initialForm, validationsForm);
+
+
+
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmits}>
         <div className="group2">
           <label htmlFor="name">Name:</label>
           <input
@@ -120,7 +178,12 @@ const RegisterForm = () => {
 
         <div className="group2">
         <label htmlFor="country">Country:</label>
-        <InputFlag />
+        <InputFlag
+            id="country"
+            onChange={handleCountryChange}
+            onBlur={handleBlur}
+          />
+
         {errors.country && <p className="warnings-form">{errors.country}</p>}
         </div>
 
@@ -151,6 +214,34 @@ const RegisterForm = () => {
             required
           />
           {errors.phone && <p className="warnings-form">{errors.phone}</p>}
+        </div>
+        <div className="group2">
+          <label htmlFor="password">Password</label>
+          <input
+            value={form.pass}
+            onBlur={handleBlur}
+            onChange={handleChange}
+            type="password"
+            name="password"
+            placeholder="Type your password"
+            id="password"
+            required
+          />
+          {errors.pass && <p className="warnings-form">{errors.pass}</p>}
+        </div>
+        <div className="group2">
+          <label htmlFor="repassword">Confirm password</label>
+          <input
+            value={form.repass}
+            onBlur={handleBlur}
+            onChange={handleChange}
+            type="password"
+            name="repassword"
+            placeholder="Confirm password"
+            id="repassword"
+            required
+          />
+          {errors.repass && <p className="warnings-form">{errors.repass}</p>}
         </div>
         <div className="group">
           <label htmlFor="message">Message:</label>

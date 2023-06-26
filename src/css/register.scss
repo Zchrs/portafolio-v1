@@ -62,11 +62,11 @@
         background: rgba(255, 255, 255, 0.438);
         right: 0;
         width: 64.95%;
-        height: 600px;
+        height: 100%;
         clip-path: polygon(26% 0, 100% 0, 100% 100%, 0% 100%);
 
         @media (max-width: 1024px) {
-            padding: 10px 10px 10px 10px;
+            padding: 50px 10px 50px 10px;
             position: relative;
             width: 100%;
             clip-path: polygon(0% 0, 100% 5%, 100% 100%, 0% 100%);
@@ -260,6 +260,19 @@
             box-sizing: border-box;
         }
 
+        .css-1dimb5e-singleValue {
+            max-width: 100%;
+            font-size: 14px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            color: black;
+            font-weight: 400;
+            margin-left: 2px;
+            margin-right: 2px;
+            box-sizing: border-box;
+        }
+
         // ------------ fin react select styles ----------------
         
         .warnings-form{
@@ -347,7 +360,7 @@
         }
         textarea{
             display: grid;
-            height: 120px;
+            height: 90px;
             border-radius: 6px;
             padding: 12px;
 

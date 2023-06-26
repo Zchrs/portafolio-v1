@@ -1,5 +1,10 @@
 import { useState } from "react";
 import { helpHttp } from "../helpers/helperHttp";
+import axios from "axios";
+import { Form } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { startLogin } from "../actions/auth";
+
 
 export const useForm = (initialForm, validateForm) => {
   // ---------------- variables de estado -----------------------
@@ -7,8 +12,17 @@ export const useForm = (initialForm, validateForm) => {
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState(null);
-
+  const [selectedCountry, setSelectedCountry] = useState('');
+  const dispatch = useDispatch();
   // ----------------- funciones form -------------------------
+
+  const handleCountryChange = (label) => {
+    setSelectedCountry(label);
+    setForm({
+      ...form,
+      country: label,
+    });
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,7 +31,7 @@ export const useForm = (initialForm, validateForm) => {
       [name]: value,
     });
   };
-
+  
   const handleBlur = (e) => {
     handleChange(e);
     setErrors(validateForm(form));
@@ -26,13 +40,41 @@ export const useForm = (initialForm, validateForm) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors(validateForm);
+    
 
     if (Object.keys(errors).length === 0) {
       alert("Enviando...");
       setLoading(true);
 
+      console.log('EJECUTANDO LA FUNCIÓN');
+
       helpHttp()
-        .post("https://formsubmit.co/ajax/642ec1d2a0dafeacb76e32a80b99615e", {
+        .post("http://localhost:4000/api/auth/register", {
+          body: Form,
+          headers: {
+            "Content-type": "application/json",
+            Accept: "application/json",
+          },
+        })
+        .then((res) => {
+          setLoading(false);
+          setResponse(true);
+          setForm(initialForm);
+          setTimeout(() => setResponse(false, initialForm, window.location.reload()), 500);
+        });
+    } else {
+      return;
+    }
+  };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setErrors(validateForm);
+
+    try {
+      helpHttp()
+      dispatch(startLogin( form.email, form.password ))
+        .post("http://localhost:4000/api/auth/login", {
           body: form,
           headers: {
             "Content-type": "application/json",
@@ -43,10 +85,40 @@ export const useForm = (initialForm, validateForm) => {
           setLoading(false);
           setResponse(true);
           setForm(initialForm);
-          setTimeout(() => setResponse(false, initialForm), 5000);
+          setTimeout(() => setResponse(false, initialForm, window.location.reload()), 500);
         });
-    } else {
-      return;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleSubmits = async (e, label) => {
+    e.preventDefault();
+    setErrors(validateForm);
+
+    const finalForm = {
+      ...form,
+    }
+
+    try {
+      debugger
+      helpHttp()
+      const response = await axios.post("http://localhost:4000/api/auth/register", finalForm, {
+       
+        body: finalForm,
+        headers: {
+          "Content-type": "application/json",
+          Accept: "application/json",
+        },
+      });
+      console.log(response);
+      setLoading(false);
+          setResponse(true);
+          setForm(initialForm);
+          setTimeout(() => setResponse(false, initialForm, window.location.href = "http://localhost:5173/#/auth/login" ), 500);
+        
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -58,5 +130,8 @@ export const useForm = (initialForm, validateForm) => {
     handleChange,
     handleBlur,
     handleSubmit,
+    handleSubmits,
+    handleLogin,
+    handleCountryChange
   };
 };

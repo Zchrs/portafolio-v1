@@ -1,13 +1,29 @@
-import { HashRouter as Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import {
  Login,
  Register,
  AuthHome
 } from "../routes/index";
-import AuthLayout from "../layouts/AuthLayout";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { startChecking } from "../actions/auth";
+
 
 export const AuthRouter = () => {
+
+  const dispatch = useDispatch();
+  const {checking, name } = useSelector( state => state.auth );
+
+  // if (checking) {
+  //   return ( <h4>Cargando...</h4> )
+  // }
+
+  useEffect(() =>{
+      dispatch(startChecking())
+  }, [dispatch])
+  console.log(checking);
+
   return (
     <Routes>
       <Route path="/auth/*" element={<AuthHome />} >

@@ -1,4 +1,3 @@
-import { getFile } from "../../components/globalFunctions";
 
 export const ServicesScreen = () => {
   return (
