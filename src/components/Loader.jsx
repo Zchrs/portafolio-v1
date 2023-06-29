@@ -1,10 +1,12 @@
 import React from "react";
+import { Spinner } from "./Spinner";
+
 import "../css/loader.css";
 
 const Loader = () => {
   return (
     <div className="loader">
-      <span>Enviando...</span>
+      <span><Spinner /></span>
     </div>
   );
 };

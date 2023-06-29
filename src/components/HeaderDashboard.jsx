@@ -3,12 +3,14 @@ import { useNavigate } from "react-router-dom";
 // import { AuthContext } from "../views/auth/AuthContext";
 import { types } from "../types/types";
 import { useDispatch, useSelector } from "react-redux";
+import { startLogout } from "../actions/auth";
 
 import "../css/headerdashboard.scss";
 
 export const HeaderDashboard = () =>{
 
-      const user = useSelector((state) => state.auth.user);
+  const user = useSelector((state) => state.auth.user);
+  // console.log(user);
 
 
     // const {
@@ -26,9 +28,7 @@ export const HeaderDashboard = () =>{
       // const { user } = useContext(AuthContext);
     
       const handleLogout = () => {
-        dispatch({
-          type: types.authLogout,
-        });
+        dispatch(startLogout());
         navigate("/auth/login");
       };
 

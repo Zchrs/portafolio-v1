@@ -1,9 +1,11 @@
-import { useState } from "react";
-import { helpHttp } from "../helpers/helperHttp";
 import axios from "axios";
+import { useEffect, useState } from "react";
+import { helpHttp } from "../helpers/helperHttp";
 import { Form } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { startLogin } from "../actions/auth";
+import { fetchWithoutToken } from "../helpers/fetch";
+
 
 
 export const useForm = (initialForm, validateForm) => {
@@ -15,6 +17,29 @@ export const useForm = (initialForm, validateForm) => {
   const [selectedCountry, setSelectedCountry] = useState('');
   const dispatch = useDispatch();
   // ----------------- funciones form -------------------------
+
+  const loadingActive = () => {
+    setLoading(true);
+    return async (dispatch) => {
+      const res = await fetchWithoutToken(
+        "auth/login",
+        { email, password },
+        "POST"
+      );
+      const body = await res.json();
+      if (body.ok) {
+
+        dispatch(
+          loginSuccess({
+            name: body.user.name,
+          })
+        );
+      } 
+      setLoading(false);
+    };
+  };
+   
+ 
 
   const handleCountryChange = (label) => {
     setSelectedCountry(label);
@@ -99,9 +124,7 @@ export const useForm = (initialForm, validateForm) => {
     const finalForm = {
       ...form,
     }
-
     try {
-      debugger
       helpHttp()
       const response = await axios.post("http://localhost:4000/api/auth/register", finalForm, {
        
@@ -127,6 +150,7 @@ export const useForm = (initialForm, validateForm) => {
     errors,
     loading,
     response,
+    loadingActive,
     handleChange,
     handleBlur,
     handleSubmit,

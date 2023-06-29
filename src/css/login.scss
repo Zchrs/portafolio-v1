@@ -126,6 +126,8 @@
         }
         .button-container button{
             position: relative;
+            display: grid;
+            place-items: center;
             width: 100px;
             height: 30px;
             border: none;
@@ -134,6 +136,7 @@
             color: white;
             cursor: pointer;
             transition: all ease .3s;
+            overflow: hidden;
         }
         .button-container button:hover{
             background: #34b0be;

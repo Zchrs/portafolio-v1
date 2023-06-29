@@ -1,12 +1,10 @@
-import React, { useContext, useState } from "react";
-import { Link, useNavigate, Navigate, useLocation } from "react-router-dom"
+import React from "react";
+import { Link, Navigate } from "react-router-dom"
 import { useForm } from "../../hooks/useForm";
-import { AuthContext } from "../../views/auth/AuthContext";
-import { types } from "../../types/types";
-import { useFormLogin } from '../../hooks/useFormLogin';
 import { useDispatch } from "react-redux";
 import { startLogin } from "../../actions/auth";
-
+import Loader from "../../components/Loader";
+import Message from "../../components/Message";
 import '../../css/login.scss';
 
 const initialForm = {
@@ -53,35 +51,16 @@ if (pass.value !== '') {
 
 export const Login = ( ) =>{
 
-
-  // const [ formLoginValues, handleLoginInputChange ] = useFormLogin({
-  //     lEmail: 'gustavo.a.c.m@gmail.com',
-  //     lPassword: '1234567'
-  // });
-
-  // const { lEmail, lPassword } = formLoginValues;
-
+  
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
-
-  // const { dispatch } = useContext( AuthContext );
-  // const handleLoginComponent = () =>{
-  //   dispatch({
-  //     type: types.login,
-  //     payload: {
-  //       name: 'Zchack',
-  //     }
-  //   });
-  //   navigate('/dashboard');
-  // }
   const handleLogin2 = (e) =>{
     e.preventDefault();
-    
     dispatch(startLogin( form.email, form.password ));
+    
+    loadingActive();
 
-     
-      return <Navigate to="/dashboard" />
+     <Navigate to="/dashboard" />
 
   }
 
@@ -90,6 +69,7 @@ export const Login = ( ) =>{
     form,
     errors,
     loading,
+    loadingActive,
     response,
     handleChange,
     handleBlur,
@@ -144,7 +124,10 @@ export const Login = ( ) =>{
                   {errors.pass && <p className="warnings-form">{errors.pass}</p>}
                 </div>
               <div className="button-container">
-                <button type="submit">Login</button>
+
+                <button type="submit">
+                  {loading ? <Loader /> : <p>Login</p> }
+                </button>
               <Link to={'/'}>Volver al inicio</Link>
               </div>
               </form>

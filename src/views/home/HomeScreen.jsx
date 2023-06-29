@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Backend, images } from "../../contentBack/Backend";
 import "../../css/globals.scss";
+import { Spinner } from "../../components/Spinner";
 
 export const HomeScreen = () => {
   return (
@@ -30,6 +31,7 @@ export const HomeScreen = () => {
             <Link to={"/contact"}>
               <button className="btn-home">
                 {Backend.textButtonsHome.contactMeBtn}
+                
               </button>
             </Link>
           </div>

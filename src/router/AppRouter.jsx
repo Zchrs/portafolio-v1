@@ -13,8 +13,16 @@ import {
   Login,
   Register
 } from "../routes/index";
+import { useDispatch, useSelector } from "react-redux";
+import { startChecking } from "../actions/auth";
+import { useEffect } from "react";
 
-export const AppRouter = ({ history }) => {
+
+
+export const AppRouter = () => {
+
+  useSelector((state) => state.auth.user);
+
   return (
     <Routes>
       <Route exact path="/*" element={<HomeScreen />} />

@@ -8,14 +8,21 @@ import {
 } from "../routes/index";
 import { AppRouter } from "../router/AppRouter";
 import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { startChecking } from "../actions/auth";
+
+
 import "../css/layout.scss";
 
 
-let contador = 0;
+
 
 export const Layout = () => {
 
+
   useEffect(() => {
+    let contador = 0;
+
     const handleScroll = () => {
       let header = document.getElementById("headerLayout");
       if (window.innerWidth > 900) {
@@ -40,8 +47,16 @@ export const Layout = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
+
   }, []);
 
+
+
+  const dispatch = useDispatch();
+
+  useEffect(() =>{
+    dispatch(startChecking());
+  }, [dispatch])
 
   return (
         <div className="layout">

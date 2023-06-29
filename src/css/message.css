@@ -1,7 +1,7 @@
 .message{
     position: relative;
     display: block;
-    width: 20%;
+    width: fit-content;
     margin:5px auto;
     left: 0;
     right: 0;
@@ -26,7 +26,6 @@
     .message{
         position: relative;
         display: block;
-        width: 50%;
         margin:5px auto;
         left: 0;
         right: 0;

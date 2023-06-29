@@ -1,14 +1,12 @@
 
 import { Link, useNavigate } from "react-router-dom";
 import { Backend, routes } from "../contentBack/Backend";
-import React, {useContext, useEffect} from "react";
-import { AuthContext } from "../views/auth/AuthContext";
-import { types } from "../types/types";
+import React, {useEffect} from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-import { logout, login } from "../actions/userActions";
 
 import "../css/header.scss";
+import { startLogout } from "../actions/auth";
 
 
 let contadorMenu = 0;
@@ -26,15 +24,14 @@ function showHideMenu() {
 export const Header = () => {
 
   const dispatch = useDispatch();
-
   const navigate = useNavigate();
 
   const user = useSelector((state) => state.auth.user);
+  // const { name } = user;
+  // console.log(user);
 
-  const handleLogOut = () => {
-    dispatch({
-      type: types.authLogout,
-    });
+  const handleLogout = () => {
+    dispatch(startLogout());
     navigate("/auth/login");
   };
 
@@ -287,7 +284,7 @@ export const Header = () => {
         {user ?
            <div className="user-logged">
             <p>{user.name}</p>
-            <button onClick={handleLogOut}>Logout</button>
+            <button onClick={handleLogout}>Logout</button>
           </div>
          : false }
       </nav>

@@ -1,14 +1,14 @@
 .loader{
     position: relative;
     display: block;
-    width: 10%;
-    margin:5px auto;
+    width: fit-content;
+    margin: 0px auto;
     left: 0;
     right: 0;
     padding: 5px;
     /* border: white 1px solid; */
     text-align: center;
-    background: rgb(2, 106, 101);
+    /* background: rgb(2, 106, 101); */
     color: white;
     font-weight: 200;
     transition: all ease .5s;
@@ -28,14 +28,12 @@
     .loader{
         position: relative;
         display: block;
-        width: 50%;
-        margin:5px auto;
         left: 0;
         right: 0;
         padding: 5px;
         /* border: white 1px solid; */
         text-align: center;
-        background: rgb(2, 106, 101);
+        /* background: rgb(2, 106, 101); */
         color: white;
         font-weight: 200;
         transition: all ease .5s;

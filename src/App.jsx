@@ -15,7 +15,7 @@ import {
   AuthLayout,
   DashboardLayout,
 } from "./routes";
-import React from "react";
+import React, { useEffect } from "react";
 import { Provider, useDispatch, useSelector } from "react-redux";
 // import { AuthContext } from "./views/auth/AuthContext";
 // import { useEffect, useReducer } from "react";
@@ -23,8 +23,6 @@ import { Provider, useDispatch, useSelector } from "react-redux";
 import { PrivateRoute } from "./router/PrivateRouter";
 import { PublicRoute } from "./router/PublicRouter";
 import { store } from "./store/store";
-
-
 
 
 
@@ -38,7 +36,6 @@ function App() {
 
   // const [user, dispatch] = useReducer( autReducer, {}, init );
   // console.log(user);
-
 
   // useEffect(() =>{
   //     localStorage.setItem( 'user', JSON.stringify(user) );

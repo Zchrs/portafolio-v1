@@ -6,8 +6,19 @@ import {
     Docs,
     Gallery
    } from "../routes/index";
+   import { useDispatch } from "react-redux";
+import { startChecking } from "../actions/auth";
+import { useEffect } from "react";
+
 
 export const DashboardRouter = () => {
+
+  const dispatch = useDispatch();
+
+  useEffect(() =>{
+    dispatch(startChecking);
+  }, [dispatch])
+
 
 
   return (

@@ -1,10 +1,10 @@
 
 
 
-const baseUrl = 'http://localhost:4000/api';
+ const baseUrl = import.meta.env.VITE_APP_API_URL;
 
- const fetchWithoutToken = ( endpoint, data, method = "GET" ) => {
-    const url = `${ baseUrl }/${ endpoint }/login`
+ export const fetchWithoutToken = ( endpoint, data, method = "GET" ) => {
+    const url = `${ baseUrl }/${ endpoint }`
     if (method === "GET") {
         return fetch( url )
     } else {
@@ -17,7 +17,7 @@ const baseUrl = 'http://localhost:4000/api';
         })
     }
 }
- const fetchWithToken = ( endpoint, data, method = "GET" ) => {
+ export const fetchWithToken = ( endpoint, data, method = "GET" ) => {
     const url = `${ baseUrl }/${ endpoint }`
     const token = localStorage.getItem('token') || '';
     if (method === "GET") {
@@ -39,7 +39,3 @@ const baseUrl = 'http://localhost:4000/api';
     }
 }
 
-export {
-    fetchWithoutToken,
-    fetchWithToken
-}
