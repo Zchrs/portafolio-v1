@@ -69,13 +69,13 @@ html, body {
             left: 260px;
         }
         @media (max-width: 1024px ) {
-            height: 145px;
+            height: 155px;
             top: 180px;
             left: 180px;
             clip-path: polygon(0 100%, 100% 100%, 100% 14%, 37% 14%, 31% 0, 24% 14%, 0 14%);
         }
         @media (max-width: 430px ) {
-            height: 145px;
+            height: fit-content;
             top: 180px;
             left: 150px;
             clip-path: polygon(0 100%, 100% 100%, 100% 14%, 37% 14%, 31% 0, 24% 14%, 0 14%);
@@ -197,6 +197,7 @@ html, body {
                 // font-size: 56px;
                 text-align: center;
                 width: 100%;
+                font-size: 3.5rem;
             }
         }
     }

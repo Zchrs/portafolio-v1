@@ -5,8 +5,8 @@ export const Backend = {
     subTitle: `[Fullstack Developer]`,
   },
   textButtonsHome: {
-    registerBtn: "Registrarme",
-    loginBtn: "Iniciar Sesión",
+    registerBtn: "Register",
+    loginBtn: "Login",
     contactMeBtn: "Contact me",
   },
   //------------------- fin home -----------------------
