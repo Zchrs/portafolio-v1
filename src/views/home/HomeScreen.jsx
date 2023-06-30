@@ -1,12 +1,22 @@
 import { Link } from "react-router-dom";
 import { Backend, images } from "../../contentBack/Backend";
+import { TypeWriter } from "../../components/TypeWriter";
 import "../../css/globals.scss";
-import { Spinner } from "../../components/Spinner";
 
 export const HomeScreen = () => {
   return (
     <section className="home animations">
       <article className="home__container">
+      <div className="home__message">
+        <h2 className="home__h2">
+          ¿Are you recruiter?
+        </h2>
+        <p className="home__p">
+          <TypeWriter
+          text="Send me a message and receive preset access credentials to log in or register to test all the functionality of my app."
+                />
+        </p>
+      </div>
         <div className="home__image">
         <img src={getFile('img', `mia`, 'png')} alt="" />
         </div>
