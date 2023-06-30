@@ -117,7 +117,7 @@ export const useForm = (initialForm, validateForm) => {
     }
   };
 
-  const handleSubmits = async (e, label) => {
+  const handleSubmits = async (e) => {
     e.preventDefault();
     setErrors(validateForm);
 
@@ -139,7 +139,7 @@ export const useForm = (initialForm, validateForm) => {
       setLoading(false);
           setResponse(true);
           setForm(initialForm);
-          setTimeout(() => setResponse(false, initialForm, window.location.href = "http://localhost:5173/#/auth/login" ), 500);
+          setTimeout(() => setResponse(false, initialForm, window.location.href = "https://gustavocastrillondev.netlify.app/#/auth/login" ), 100);
         
     } catch (error) {
       console.log(error);
