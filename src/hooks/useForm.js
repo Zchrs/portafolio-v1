@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { startLogin } from "../actions/auth";
 import { fetchWithoutToken } from "../helpers/fetch";
 
-
+const baseUrl = import.meta.env.VITE_APP_API_URL;
 
 export const useForm = (initialForm, validateForm) => {
   // ---------------- variables de estado -----------------------
@@ -126,7 +126,8 @@ export const useForm = (initialForm, validateForm) => {
     }
     try {
       helpHttp()
-      const response = await axios.post("http://localhost:4000/api/auth/register", finalForm, {
+      // const response = await axios.post("http://localhost:4000/api/auth/register", finalForm, {
+      const response = await axios.post("https://backend-gcdev.vercel.app/api/auth/register", finalForm, {
        
         body: finalForm,
         headers: {
