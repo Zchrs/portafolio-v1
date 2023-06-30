@@ -1,7 +1,7 @@
 
 
 
- const baseUrl = "https://backend-gcdev.vercel.app/api";
+ const baseUrl = import.meta.env.VITE_APP_API_URL;
 
  export const fetchWithoutToken = ( endpoint, data, method = "GET" ) => {
     const url = `${ baseUrl }/${ endpoint }`
