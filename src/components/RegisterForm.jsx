@@ -5,8 +5,6 @@ import Message from "./Message";
 import InputFlag from "./InputFlag";
 import { Link } from "react-router-dom";
 
-import { useState } from "react";
-
 const initialForm = {
   name: "",
   lastname: "",
@@ -258,10 +256,12 @@ const RegisterForm = () => {
           ></textarea>
         </div>
         {errors.message && <p className="warnings-form">{errors.message}</p>}
-        {loading && <Loader />}
+        
         {response && <Message />}
         <div className="button-container">
-          <button type="submit">Send</button>
+          <button type="submit">
+            {loading ? <Loader /> : <p>Send</p> }
+          </button>
           <button type="reset">Reset</button>
         </div>
         <Link to={'/'}>Volver al inicio</Link>

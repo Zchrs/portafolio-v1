@@ -39,7 +39,6 @@ export const useForm = (initialForm, validateForm) => {
     };
   };
    
- 
 
   const handleCountryChange = (label) => {
     setSelectedCountry(label);
@@ -117,17 +116,17 @@ export const useForm = (initialForm, validateForm) => {
     }
   };
 
-  const handleSubmits = async (e) => {
+  const handleSubmits = async (e, label) => {
     e.preventDefault();
     setErrors(validateForm);
-
+    setLoading(true);
     const finalForm = {
       ...form,
     }
     try {
       helpHttp()
-      // const response = await axios.post("http://localhost:4000/api/auth/register", finalForm, {
       const response = await axios.post("https://backend-gcdev.vercel.app/api/auth/register", finalForm, {
+      // const response = await axios.post("http://localhost:4000/api/auth/register", finalForm, {
        
         body: finalForm,
         headers: {
@@ -139,11 +138,13 @@ export const useForm = (initialForm, validateForm) => {
       setLoading(false);
           setResponse(true);
           setForm(initialForm);
-          setTimeout(() => setResponse(false, initialForm, window.location.href = "https://gustavocastrillondev.netlify.app/#/auth/login" ), 100);
+          setTimeout(() => setResponse(false, initialForm, window.location.href = "https://gustavocastrillondev.netlify.app/#/auth/login" ), 200);
+          // setTimeout(() => setResponse(false, initialForm, window.location.href = "http://localhost:5173/#/auth/login" ), 200);
         
     } catch (error) {
       console.log(error);
     }
+    setLoading(false);
   };
 
   return {
