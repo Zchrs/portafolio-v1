@@ -20,10 +20,6 @@ export const autReducer = (state = {}, action) =>{
             return state;
     }
 }
-// const initialState = {
-//     id: '1234',
-//     name: "Zchack",
-// }
 export const authReducers = (state = {}, action) =>{
 
     switch ( action.type ) {
