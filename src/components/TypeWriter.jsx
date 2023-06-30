@@ -37,6 +37,8 @@ export const TypeWriter = ({ text }) => {
   }, [text]);
 
   return (
+    <>
     <p id="titulo" ></p>
+    </>
   );
 };
