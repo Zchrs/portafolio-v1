@@ -2,7 +2,7 @@ import "../css/spinner.scss"
 
 export const Spinner = () =>{
     return (
-        <div class="spinner-waves">
+        <div className="spinner-waves">
             <div></div>
             <div></div>
         </div>

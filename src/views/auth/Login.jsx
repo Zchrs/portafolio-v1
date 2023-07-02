@@ -7,6 +7,7 @@ import Loader from "../../components/Loader";
 import Message from "../../components/Message";
 import '../../css/login.scss';
 
+
 const initialForm = {
   email: "",
   password: "",
@@ -49,7 +50,7 @@ if (pass.value !== '') {
  return errors;
 };
 
-export const Login = ( ) =>{
+export const Login = () =>{
 
   
   const dispatch = useDispatch();
@@ -134,6 +135,7 @@ export const Login = ( ) =>{
               
             </div>
          </div>
+
         </section>
     )
 }

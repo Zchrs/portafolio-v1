@@ -64,3 +64,46 @@ export const startChecking = () => {
     // debugger
   };
 };
+
+
+const startRegister = async (
+  e, 
+  name, 
+  lastName, 
+  email, 
+  country, 
+  phone,
+  password,
+  repassword,
+  message
+  ) => {
+  e.preventDefault();
+  setErrors(validateForm);
+  setLoading(true);
+  const finalForm = {
+    ...form,
+  }
+  try {
+    helpHttp()
+    const response = await axios.post("https://backend-gcdev.vercel.app/api/auth/register", finalForm, {
+    // const response = await axios.post("http://localhost:4000/api/auth/register", finalForm, {
+     
+      body: finalForm,
+      headers: {
+        "Content-type": "application/json",
+        Accept: "application/json",
+      },
+    });
+    console.log(response);
+    setLoading(false);
+        setResponse(true);
+        setForm(initialForm);
+        setTimeout(() => setResponse(false, initialForm, ));
+        // setTimeout(() => setResponse(false, initialForm, window.location.href = "http://localhost:5173/#/auth/login" ), 200);
+      
+  } catch (error) {
+    console.log(error);
+  }
+  setLoading(false);
+  setModal(true)
+};

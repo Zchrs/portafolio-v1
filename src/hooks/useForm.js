@@ -6,13 +6,14 @@ import { useDispatch } from "react-redux";
 import { startLogin } from "../actions/auth";
 import { fetchWithoutToken } from "../helpers/fetch";
 
-const baseUrl = import.meta.env.VITE_APP_API_URL;
+
 
 export const useForm = (initialForm, validateForm) => {
   // ---------------- variables de estado -----------------------
   const [form, setForm] = useState(initialForm);
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
+  const [modal, setModal] = useState(false);
   const [response, setResponse] = useState(null);
   const [selectedCountry, setSelectedCountry] = useState('');
   const dispatch = useDispatch();
@@ -36,6 +37,7 @@ export const useForm = (initialForm, validateForm) => {
         );
       } 
       setLoading(false);
+      
     };
   };
    
@@ -138,13 +140,15 @@ export const useForm = (initialForm, validateForm) => {
       setLoading(false);
           setResponse(true);
           setForm(initialForm);
-          setTimeout(() => setResponse(false, initialForm, window.location.href = "https://gustavocastrillondev.netlify.app/#/auth/login" ), 200);
+          setTimeout(() => setResponse(false, initialForm, ));
           // setTimeout(() => setResponse(false, initialForm, window.location.href = "http://localhost:5173/#/auth/login" ), 200);
         
     } catch (error) {
       console.log(error);
+      return
     }
     setLoading(false);
+    setModal(true)
   };
 
   return {
@@ -152,6 +156,7 @@ export const useForm = (initialForm, validateForm) => {
     errors,
     loading,
     response,
+    modal,
     loadingActive,
     handleChange,
     handleBlur,

@@ -1,9 +1,14 @@
 import { Link } from 'react-router-dom'
 import RegisterForm from '../../components/RegisterForm'
 import { getFile } from '../../components/globalFunctions'
+import { Modal } from "../../components/Modal";
+import { useForm } from "../../hooks/useForm";
 import '../../css/register.scss'
 
 export const Register = () =>{
+
+  const { modal } = useForm();
+
     return (
         <section className="register">
          <div className='register-left'>
@@ -25,6 +30,12 @@ export const Register = () =>{
          <div className='register-right'>
             <RegisterForm />
          </div>
+         {modal && (
+        <Modal
+          title="Registrado correctamente"
+          subtitle="Serás redirigido al login en..."
+        />
+      )}
         </section>
     )
 }

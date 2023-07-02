@@ -2,8 +2,10 @@ import React from "react";
 import { useForm } from "../hooks/useForm";
 import Loader from "./Loader";
 import Message from "./Message";
+import {Modal} from "./Modal";
 import InputFlag from "./InputFlag";
 import { Link } from "react-router-dom";
+
 
 const initialForm = {
   name: "",
@@ -131,6 +133,7 @@ const RegisterForm = () => {
     errors,
     loading,
     response,
+    modal,
     handleChange,
     handleBlur,
     handleSubmit,
@@ -266,6 +269,10 @@ const RegisterForm = () => {
         </div>
         <Link to={'/'}>Volver al inicio</Link>
       </form>
+      {modal && <Modal
+            title="Registrado correctamente"
+            subtitle="Redirigiendo"
+          />}
     </div>
   );
 };
