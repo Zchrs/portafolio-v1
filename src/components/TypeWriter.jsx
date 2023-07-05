@@ -3,24 +3,24 @@ import "../css/globals.scss";
 
 export const TypeWriter = ({ text }) => {
   const [charactersWritten, setCharactersWritten] = useState(0);
-   document.getElementById('titulo');
-
+  
   useEffect(() => {
+    let titulo = document.getElementById('titulo');
     const timeout = setTimeout(() => {
       let arr = text.split('');
       let i = 0;
 
       let interval = setInterval(() => {
         if (i === arr.length - 1) {
-          document.getElementById('titulo').innerHTML += arr[i];
+          titulo.innerHTML += arr[i];
           clearInterval(interval);
         } else {
           if (arr[i] === ' ') {
-            document.getElementById('titulo').innerHTML += arr[i];
-            document.getElementById('titulo').innerHTML += arr[i + 1];
+            titulo.innerHTML += arr[i];
+            titulo.innerHTML += arr[i + 1];
             i += 2;
           } else {
-            document.getElementById('titulo').innerHTML += arr[i];
+            titulo.innerHTML += arr[i];
             i++;
           }
         }
