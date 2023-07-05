@@ -9,7 +9,6 @@
         display: grid;
         grid-column: 2 / 8;
         grid-row: 1 ;
-        background: gray;
         width: 100%;
         height: fit-content;
     }
@@ -17,13 +16,10 @@
     &-nav{
         display: grid;
         grid-row: 1 / 8;
-       
-        background: rgb(74, 74, 74);
         height: 100%;
         // min-height: 100VH;
         width: 100%;
-        padding: 24px;
-       
+        
     }
 
     &-container{

@@ -11,16 +11,16 @@ export const NavDashboard = () =>{
     const user = useSelector((state) => state.auth.user); // con redux
 
     return (
-        <nav className="nav" >
-            <div className="nav-avatar">
-                <div className="nav-avatar__container">
-                    <div className="nav-photo"></div>
+        <nav className="navDash" >
+            <div className="navDash-avatar">
+                <div className="navDash-avatar__container">
+                    <div className="navDash-photo"></div>
                      {user ?
-                    <p className="nav__p">{user.name}</p>
+                    <p className="navDash__p">{user.name}</p>
                     : false }
                 </div>
             </div>
-        <div className="nav-menu">
+        <div className="navDash-menu">
             
             <Link to={'/dashboard'}><i></i>Panel</Link>
             <Link to={'/dashboard/profile'}><i></i>Profile</Link>

@@ -2,6 +2,7 @@
 
 
  const baseUrl = import.meta.env.VITE_APP_API_URL;
+//  const baseUrl = "http://localhost:4000/api";
 
  export const fetchWithoutToken = ( endpoint, data, method = "GET" ) => {
     const url = `${ baseUrl }/${ endpoint }`

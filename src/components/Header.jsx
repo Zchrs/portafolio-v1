@@ -1,4 +1,3 @@
-
 import { Link, useNavigate } from "react-router-dom";
 import { Backend, routes } from "../contentBack/Backend";
 import React, {useEffect} from "react";
@@ -169,16 +168,12 @@ export const Header = () => {
             height: 100%;
           `;
           demoAccountBtn.style.cssText = `
-            right: 10px;
-            position: absolute;
             transform: translateY(60px); 
             transition: all ease .2s; 
             transition-delay: .2s;
             z-index: 9999;
           `;
           openAccountBtn.style.cssText = `
-            right: 100px;
-            position: absolute;
             transform: translateY(60px); 
             transition: all ease .2s; 
             transition-delay: .1s; 

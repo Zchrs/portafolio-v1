@@ -30,9 +30,9 @@ export const DashboardLayout = () =>{
             <DashboardRouter />
           </div>
 
-          <footer className="dashblayout-footer">
+          {/* <footer className="dashblayout-footer">
             <h2>Footer</h2>
-          </footer>
+          </footer> */}
         </section>
     )
 }

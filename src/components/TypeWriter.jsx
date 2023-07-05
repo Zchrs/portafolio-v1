@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import "../css/globals.scss";
 
 export const TypeWriter = ({ text }) => {
   const [charactersWritten, setCharactersWritten] = useState(0);
@@ -37,8 +38,8 @@ export const TypeWriter = ({ text }) => {
   }, [text]);
 
   return (
-    <>
-    <p id="titulo" ></p>
-    </>
+    
+    <div className='home__p' id="titulo"></div>
+    
   );
 };

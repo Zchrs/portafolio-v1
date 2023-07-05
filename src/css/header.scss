@@ -162,12 +162,18 @@
 
             button{
                 display: grid;
-                padding: 2px 10px;
+                padding: 4px 10px;
                 cursor: pointer;
                 background: transparent;
+                border-radius: 5px;
                 outline: none;
                 border: #ff4f6f 1px solid;
                 color: #ff4f6f;
+
+                &:hover{
+                    border: #f87890 1px solid;
+                    color: #f87890;
+                }
             }
         }
 
@@ -204,6 +210,7 @@
 
         .nav {
             transition: all ease .3s;
+            height: 50px;
 
             ul {
                 display: flex;

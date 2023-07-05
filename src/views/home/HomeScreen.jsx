@@ -11,11 +11,11 @@ export const HomeScreen = () => {
         <h2 className="home__h2">
           ¿Are you recruiter?
         </h2>
-        <p className="home__p">
+        
           <TypeWriter
             text="Send me a message and receive preset access credentials to log in or register to test all the functionality of my app."
           />
-        </p>
+       
       </div>
         <div className="home__image">
         <img src={getFile('img', `mia`, 'png')} alt="" />
