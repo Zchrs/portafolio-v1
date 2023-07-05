@@ -39,7 +39,7 @@ export const TypeWriter = ({ text }) => {
 
   return (
     
-    <div className='home__p' id="titulo"></div>
+    <p className='home__p' id="titulo"></p>
     
   );
 };
