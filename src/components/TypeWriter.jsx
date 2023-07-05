@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import "../css/globals.scss";
-const titulo = document.getElementById('titulo');
+
 export const TypeWriter = ({ text }) => {
   const [charactersWritten, setCharactersWritten] = useState(0);
+   document.getElementById('titulo');
 
   useEffect(() => {
     const timeout = setTimeout(() => {
