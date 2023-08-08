@@ -282,5 +282,14 @@
     }
 
 
-
+    .active{
+            color: white;
+            text-shadow:
+                black 1px 1px 1px,
+                black -1px -1px 1px,
+                white 1px 1px 10px,
+                white -1px -1px 10px,
+                #ff4f6f 1px 1px 15px,
+                #ff4f6f -1px -1px 15px;
+    }
 }

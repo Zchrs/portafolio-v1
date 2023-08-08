@@ -35,6 +35,7 @@
     "safe-buffer": "^5.2.1",
     "safer-buffer": "^2.1.2",
     "sass": "^1.58.0",
+    "sequelize": "^6.32.1",
     "uuid": "^9.0.0"
   },
   "devDependencies": {

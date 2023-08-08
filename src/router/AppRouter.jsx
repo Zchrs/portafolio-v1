@@ -1,4 +1,4 @@
-import { HashRouter as Switch, Routes, Route } from "react-router-dom";
+import { HashRouter as Switch, Routes, Route, Navigate } from "react-router-dom";
 
 import {
   // componente global
@@ -16,6 +16,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { startChecking } from "../actions/auth";
 import { useEffect } from "react";
+import { Page404 } from "../components/Page404";
 
 
 
@@ -31,6 +32,7 @@ export const AppRouter = () => {
       <Route exact path="/portfolio" element={<PortfolioScreen />} />
       <Route exact path="/skills" element={<SkillsScreen />} />
       <Route exact path="/contact" element={<ContactScreen />} />
+      <Route path="/*" element={ <Page404 /> }></Route>
     </Routes>
   );
 };

@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Backend, routes } from "../contentBack/Backend";
 import React, {useEffect} from "react";
 
@@ -221,38 +221,38 @@ export const Header = () => {
   return (
     <header className="header" id="cabeza">
       <div className="header__sub-header">
-        <Link className="logo" to={"/"}>
+        <NavLink className="logo" to={"/"}>
           <div id="logo">
             <img src={getFile("img", `logoPersonal`, "png")} alt="" />
           </div>
-        </Link>
+        </NavLink>
         <div className="header__sub-nav">
           <ul>
             <li id="phone-number">
-              <Link to={"/"}>
+              <NavLink className={({isActive}) => `${ isActive ? 'active' : '' }`} to={"/"}>
                 <button>
                   <i>
                     <img src={getFile("img", `whatsapp-logo`, "svg")} alt="" />
                   </i>
                   +57 302-849-2871
                 </button>
-              </Link>
+              </NavLink>
             </li>
             {/* <li>
-              <Link to={"/"}>ES</Link>
+              <NavLink to={"/"}>ES</NavLink>
             </li> */}
             <li id="open-account-btn">
               {!user ?
-              <Link to={"auth/register"}>
+              <NavLink to={"auth/register"}>
                 <button>{Backend.textButtonsHome.registerBtn}</button>
-              </Link>
+              </NavLink>
               : false } 
             </li>
             <li id="demo-account-btn">
               {!user ?
-              <Link to={"auth/login"}>
+              <NavLink to={"auth/login"}>
                 <button>{Backend.textButtonsHome.loginBtn}</button>
-              </Link>
+              </NavLink>
                : false } 
             </li>
           </ul>
@@ -266,12 +266,12 @@ export const Header = () => {
           <ul id="submenu">
             {routes.map(({ id, name }) => (
               <li onClick={showHideMenu} key={id}>
-                <Link to={id}>{name}</Link>
+                <NavLink to={id}>{name}</NavLink>
               </li>
             ))}
           {user ?
             <li>
-              <Link to={'/dashboard'}>Dashboard</Link>
+              <NavLink to={'/dashboard'}>Dashboard</NavLink>
             </li>
          : false }
           </ul>
