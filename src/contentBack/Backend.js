@@ -1,7 +1,7 @@
 export const Backend = {
   //----------------------- home -----------------------
   home: {
-    title: `<Hi, I'm Gustavo />`,
+    title: `<I'm Gustavo />`,
     subTitle: `[Fullstack Developer]`,
   },
   textButtonsHome: {

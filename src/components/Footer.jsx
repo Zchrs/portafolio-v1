@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../css/footer.scss";
 export const Footer = () => {
   return (
@@ -6,23 +6,23 @@ export const Footer = () => {
       <div className="footer-container">
         <div>
           <h3>More About me</h3>
-          <Link to={'about'}>About me</Link>
-          <Link to={'skills'}>Skills</Link>
+          <NavLink className={({isActive}) => `${ isActive ? 'active' : '' }`} to={'about'}>About me</NavLink>
+          <NavLink to={'skills'}>Skills</NavLink>
           </div>
         <div>
           <h3>More services</h3>
-          <Link to={'portfolio'}>Portfolio</Link>
-          <Link to={'services'}>Services</Link>
+          <NavLink to={'portfolio'}>Portfolio</NavLink>
+          <NavLink to={'services'}>Services</NavLink>
           </div>
         <div>
           <h3>Users</h3>
-          <Link to={'/auth/register'}>Register</Link>
-          <Link to={'/auth/login'}>Login</Link>
+          <NavLink to={'/auth/register'}>Register</NavLink>
+          <NavLink to={'/auth/login'}>Login</NavLink>
           </div>
         <div>
           <h3>Contact</h3>
-          <Link>gustavocastrillondev@gmail.com</Link>
-          <Link>Send me a message</Link>
+          <p>gustavocastrillondev@gmail.com</p>
+          <NavLink to={'contact'}>Send me a message</NavLink>
           </div>
       </div> 
       <p className="footer__p">

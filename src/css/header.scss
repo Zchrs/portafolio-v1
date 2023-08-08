@@ -72,6 +72,7 @@
             font-size: 15px;
 
             button {
+                position: relative;
                 display: flex;
                 align-items: center;
                 gap: 3px;
@@ -81,6 +82,22 @@
                 border: none;
                 font-size: 10px;
                 font-weight: 100;
+
+                &::before{
+                    content: "";
+                    position: absolute;
+                    background: white;
+                    left: 0;
+                    bottom: 0;
+                    width: 0%;
+                    height: 1px;
+                    transition: all ease .3s;
+                }
+                &:hover::before{
+                    width: 100%;
+                    background:#ff4f6f;
+                    z-index: -1;
+                }
             }
 
             // border: gold 1px solid;
@@ -101,9 +118,7 @@
                     height: fit-content;
                     list-style-type: none;
                     transition: all ease .05s;
-
                 }
-
             }
 
             a {

@@ -223,7 +223,7 @@ export const Header = () => {
       <div className="header__sub-header">
         <NavLink className="logo" to={"/"}>
           <div id="logo">
-            <img src={getFile("img", `logoPersonal`, "png")} alt="" />
+            <img loading="lazy" src={getFile("img", `logoPersonal`, "png")} alt="" />
           </div>
         </NavLink>
         <div className="header__sub-nav">
@@ -234,7 +234,7 @@ export const Header = () => {
                   <i>
                     <img src={getFile("img", `whatsapp-logo`, "svg")} alt="" />
                   </i>
-                  +57 302-849-2871
+                  +57 320-510-7584
                 </button>
               </NavLink>
             </li>
@@ -260,7 +260,7 @@ export const Header = () => {
       </div>
       <nav>
         <div onClick={showHideMenu} id="logo" className="logo2">
-          <img src={getFile("img", `logoPersonal`, "png")} alt="" />
+          <img loading="lazy" src={getFile("img", `logoPersonal`, "png")} alt="" />
         </div>
         <div className="nav">
           <ul id="submenu">

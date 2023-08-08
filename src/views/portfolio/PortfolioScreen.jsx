@@ -10,7 +10,7 @@ export const PortfolioScreen = () => {
         
           {cardPortfolio.map(({ title, text, link, img }) => (
             <div key={title} className="portfolio-card">
-              <img src={getFile('img', `${ img }`, `png`)} alt="" />
+              <img loading="lazy" src={getFile('img', `${ img }`, `png`)} alt="" />
               <h2 className="portfolio-card__h2">{ title }</h2>
               <p className="portfolio-card__p">
                 <ExternalLink href={ link }>
